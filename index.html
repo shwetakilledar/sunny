@@ -186,9 +186,11 @@
         }
     </style>
     <script>
-        document.addEventListener("click", () => {
-            const iframe = document.getElementById("yt-player");
-            iframe.src = "https://www.youtube.com/embed/yg8116aeD7E?autoplay=1";
+        const btn = document.getElementById("play-btn");
+        const iframe = document.getElementById("yt-player");
+
+        btn.addEventListener("click", () => {
+        iframe.src = "https://www.youtube.com/embed/yg8116aeD7E?autoplay=1&controls=0";
         }, { once: true });
     </script>
 </head>
@@ -270,12 +272,14 @@
             as well as a gym enthusiast and aspiring entrepreneur.
           </span>
         </div>
-        <iframe 
+        <button id="play-btn">🎶</button>
+
+        <iframe
             id="yt-player"
-            width="0" 
-            height="0" 
+            width="0"
+            height="0"
             style="display:none;"
-            src="https://www.youtube.com/embed/yg8116aeD7E"
+            src=""
             frameborder="0"
             allow="autoplay; encrypted-media">
         </iframe>
