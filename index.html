@@ -78,11 +78,12 @@
         }
 
         .introduction {
-        color: #fff;
+            color: #fff;
             text-align: center;
             font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
             margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
         .diminished {
             position: relative;
@@ -186,19 +187,7 @@
         }
     </style>
 
-    <script>
-        const playBtn = document.getElementById("play-btn");
-        const stopBtn = document.getElementById("stop-btn");
-        const audio = document.getElementById("bg-music");
-        playBtn.addEventListener("click", () => {
-            audio.currentTime = 3; // start at 3rd second
-            audio.play();
-        });
-        stopBtn.addEventListener("click", () => {
-            audio.pause();
-            audio.currentTime = 3; // reset to 3rd second
-        });
-    </script>
+   
 </head>
 
 <body>
@@ -277,10 +266,24 @@
             I am Sunn<span class="diminished">y</span>, a music teacher specializing in piano, guitar, and drums -
             as well as a gym enthusiast and aspiring entrepreneur.
           </span>
+          <button id="play-btn">Click me!</button>
         </div>
-        <button id="play-btn">Play Poco Loco 🎶</button>
-        <button id="stop-btn">Stop Music ⏹️</button>
+       
+        <!-- <button id="stop-btn">Stop Music ⏹️</button> -->
         <audio id="bg-music" src="./poco-loco.mp3"></audio>
+        <script>
+            const playBtn = document.getElementById("play-btn");
+            const stopBtn = document.getElementById("stop-btn");
+            const audio = document.getElementById("bg-music");
+            playBtn.addEventListener("click", () => {
+                audio.currentTime = 3; // start at 3rd second
+                audio.play();
+            });
+            stopBtn.addEventListener("click", () => {
+                audio.pause();
+                audio.currentTime = 3; // reset to 3rd second
+            });
+        </script>
         </div>
     </body>
 </html>
