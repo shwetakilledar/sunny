@@ -185,13 +185,19 @@
             }
         }
     </style>
-    <script>
-        const btn = document.getElementById("play-btn");
-        const iframe = document.getElementById("yt-player");
 
-        btn.addEventListener("click", () => {
-        iframe.src = "https://www.youtube.com/embed/yg8116aeD7E?autoplay=1&controls=0";
-        }, { once: true });
+    <script>
+        const playBtn = document.getElementById("play-btn");
+        const stopBtn = document.getElementById("stop-btn");
+        const audio = document.getElementById("bg-music");
+        playBtn.addEventListener("click", () => {
+            audio.currentTime = 3; // start at 3rd second
+            audio.play();
+        });
+        stopBtn.addEventListener("click", () => {
+            audio.pause();
+            audio.currentTime = 3; // reset to 3rd second
+        });
     </script>
 </head>
 
@@ -272,17 +278,9 @@
             as well as a gym enthusiast and aspiring entrepreneur.
           </span>
         </div>
-        <button id="play-btn">🎶</button>
-
-        <iframe
-            id="yt-player"
-            width="0"
-            height="0"
-            style="display:none;"
-            src=""
-            frameborder="0"
-            allow="autoplay; encrypted-media">
-        </iframe>
+        <button id="play-btn">Play Poco Loco 🎶</button>
+        <button id="stop-btn">Stop Music ⏹️</button>
+        <audio id="bg-music" src="./poco-loco.mp3"></audio>
         </div>
     </body>
 </html>
